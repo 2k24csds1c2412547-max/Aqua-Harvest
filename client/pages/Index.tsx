@@ -106,7 +106,7 @@ export default function Index() {
                   size="lg"
                   className="bg-water-600 hover:bg-water-700"
                 >
-                  <Link to="/assessment">
+                  <Link to="/dashboard">
                     Start Assessment
                     <Calculator className="ml-2 w-5 h-5" />
                   </Link>
