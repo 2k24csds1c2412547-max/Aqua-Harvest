@@ -65,6 +65,39 @@ export default function Layout({ children }: LayoutProps) {
               })}
             </div>
 
+            {/* User Menu / Auth */}
+            <div className="hidden md:flex items-center space-x-4">
+              {user ? (
+                <>
+                  <span className="text-sm text-gray-600">
+                    Welcome, <span className="font-semibold">{user.name}</span>
+                  </span>
+                  <button
+                    onClick={handleLogout}
+                    className="flex items-center space-x-1 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-red-600 hover:bg-red-50 transition-colors"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    <span>Logout</span>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/login"
+                    className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-water-600 hover:bg-water-50 transition-colors"
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    to="/signup"
+                    className="px-3 py-2 rounded-lg text-sm font-medium text-white bg-water-600 hover:bg-water-700 transition-colors"
+                  >
+                    Sign Up
+                  </Link>
+                </>
+              )}
+            </div>
+
             {/* Mobile menu button */}
             <Button
               variant="ghost"
