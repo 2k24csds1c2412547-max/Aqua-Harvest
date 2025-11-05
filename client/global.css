@@ -144,6 +144,48 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* Enigmatic Glassmorphism Effect */
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 rounded-xl;
+  }
+
+  /* Neon Glow Effects */
+  .neon-glow-cyan {
+    @apply shadow-lg shadow-cyan-500/50;
+  }
+
+  .neon-glow-lime {
+    @apply shadow-lg shadow-lime-500/50;
+  }
+
+  .neon-text-cyan {
+    @apply text-cyan-400 drop-shadow-lg;
+  }
+
+  .neon-text-lime {
+    @apply text-lime-400 drop-shadow-lg;
+  }
+
+  /* Deep shadows for enigmatic feel */
+  .deep-shadow {
+    @apply shadow-2xl shadow-black/50;
+  }
+
+  /* Enigmatic gradient backgrounds */
+  .enigma-bg {
+    @apply bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900;
+  }
+
+  .enigma-card {
+    @apply glass-effect deep-shadow rounded-2xl;
   }
 }
