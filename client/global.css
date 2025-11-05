@@ -15,35 +15,35 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    --background: 210 40% 98%;
-    --foreground: 210 22% 15%;
+    --background: 211 46% 14%;
+    --foreground: 210 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 22% 15%;
+    --card: 211 50% 16%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 22% 15%;
+    --popover: 211 50% 16%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 200 95% 45%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 211 46% 14%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 210 22% 15%;
+    --secondary: 211 50% 20%;
+    --secondary-foreground: 210 20% 95%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 210 10% 55%;
+    --muted: 211 50% 25%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 210 40% 96%;
-    --accent-foreground: 210 22% 15%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 211 46% 14%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 210 20% 95%;
 
-    --border: 214 31% 91%;
-    --input: 214 31% 91%;
-    --ring: 200 95% 45%;
+    --border: 211 50% 20%;
+    --input: 211 50% 20%;
+    --ring: 180 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 1.25rem;
 
     /* Water theme colors */
     --water-50: 195 100% 95%;
