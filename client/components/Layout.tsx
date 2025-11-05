@@ -22,7 +22,7 @@ export default function Layout({ children }: LayoutProps) {
 
   const navigation = [
     { name: "Home", href: "/", icon: Droplets },
-    { name: "Assessment", href: "/assessment", icon: Calculator },
+    { name: "Dashboard", href: "/dashboard", icon: Calculator },
     { name: "Resources", href: "/resources", icon: FileText },
     { name: "About", href: "/about", icon: Info },
   ];
