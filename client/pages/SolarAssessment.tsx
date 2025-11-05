@@ -1107,7 +1107,3 @@ export default function SolarAssessment() {
     </div>
   );
 }
-
-export default function SolarAssessmentPage() {
-  return <SolarAssessment />;
-}
