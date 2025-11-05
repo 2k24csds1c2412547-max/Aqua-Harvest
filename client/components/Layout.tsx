@@ -1,16 +1,24 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X, Droplets, Calculator, FileText, Info } from "lucide-react";
+import { Menu, X, Droplets, Calculator, FileText, Info, LogOut } from "lucide-react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate, Outlet } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { getCurrentUser, logout } from "@/utils/authUtils";
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const user = getCurrentUser();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   const navigation = [
     { name: "Home", href: "/", icon: Droplets },
