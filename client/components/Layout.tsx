@@ -110,7 +110,7 @@ export default function Layout({ children }: LayoutProps) {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-1">{children}</main>
+      <main className="flex-1">{children || <Outlet />}</main>
 
       {/* Footer */}
       <footer className="bg-white border-t border-water-200 mt-auto">
