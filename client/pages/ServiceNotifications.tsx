@@ -15,6 +15,7 @@ import {
   Mail,
   Trash2,
   Plus,
+  FileText,
 } from "lucide-react";
 import { getCurrentUser } from "@/utils/authUtils";
 
