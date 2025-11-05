@@ -17,7 +17,10 @@ import {
   FileCheck,
 } from "lucide-react";
 import { getCurrentUser } from "@/utils/authUtils";
-import { getSubsidiesForState, type StateSubsidies } from "@/utils/subsidiesUtils";
+import {
+  getSubsidiesForState,
+  type StateSubsidies,
+} from "@/utils/subsidiesUtils";
 
 export default function Subsidies() {
   const [subsidies, setSubsidies] = useState<StateSubsidies | null>(null);
@@ -60,8 +63,8 @@ export default function Subsidies() {
           Government Subsidies & Incentives
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Explore available financial benefits and incentives for solar panel and
-          rainwater harvesting installations in your area
+          Explore available financial benefits and incentives for solar panel
+          and rainwater harvesting installations in your area
         </p>
       </div>
 
@@ -72,9 +75,7 @@ export default function Subsidies() {
             <div className="flex items-center space-x-3">
               <MapPin className="w-5 h-5 text-blue-600" />
               <div>
-                <p className="text-sm text-gray-600">
-                  Showing subsidies for:
-                </p>
+                <p className="text-sm text-gray-600">Showing subsidies for:</p>
                 <p className="text-lg font-semibold text-gray-900">
                   {user.location}
                   {user.pincode && ` (${user.pincode})`}
@@ -314,10 +315,7 @@ export default function Subsidies() {
           <p className="text-gray-600 mb-6">
             Try adjusting your filters or check back later for new programs
           </p>
-          <Button
-            variant="outline"
-            onClick={() => setSelectedCategory("all")}
-          >
+          <Button variant="outline" onClick={() => setSelectedCategory("all")}>
             Reset Filters
           </Button>
         </div>
@@ -331,22 +329,20 @@ export default function Subsidies() {
         </h3>
         <ul className="space-y-2 text-sm text-gray-700">
           <li>
-            • Subsidy amounts and eligibility criteria vary by state and may change
-            periodically
+            • Subsidy amounts and eligibility criteria vary by state and may
+            change periodically
           </li>
-          <li>
-            • Most schemes require application within specific deadlines
-          </li>
+          <li>• Most schemes require application within specific deadlines</li>
           <li>
             • Some subsidies are stackable (e.g., central + state schemes)
           </li>
           <li>
-            • Always verify current eligibility and application requirements on official
-            portals
+            • Always verify current eligibility and application requirements on
+            official portals
           </li>
           <li>
-            • Qualified installers and engineers must be registered with respective
-            authorities
+            • Qualified installers and engineers must be registered with
+            respective authorities
           </li>
         </ul>
       </div>

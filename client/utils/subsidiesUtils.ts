@@ -30,7 +30,7 @@ export const getSubsidiesForState = async (
   await new Promise((resolve) => setTimeout(resolve, 1500));
 
   const stateSubsidies: Record<string, Subsidy[]> = {
-    "Rajasthan": [
+    Rajasthan: [
       {
         id: "s1",
         name: "Mukhyamantri Solar Pumps Yojana",
@@ -66,7 +66,11 @@ export const getSubsidiesForState = async (
         officialLink: "https://mnre.gov.in",
         contactEmail: "renewable@rajasthan.gov.in",
         documents: ["Property documents", "Electrical drawings"],
-        applicationProcess: ["Apply to DISCOM", "Technical approval", "Grid connection"],
+        applicationProcess: [
+          "Apply to DISCOM",
+          "Technical approval",
+          "Grid connection",
+        ],
       },
       {
         id: "s3",
@@ -102,11 +106,7 @@ export const getSubsidiesForState = async (
         maxSubsidyAmount: 100000,
         officialLink: "https://water.rajasthan.gov.in",
         contactEmail: "rtwh@water.rajasthan.gov.in",
-        documents: [
-          "Building plan",
-          "Land survey report",
-          "Bank details",
-        ],
+        documents: ["Building plan", "Land survey report", "Bank details"],
         applicationProcess: [
           "Contact Water Resource Department",
           "Site survey",
@@ -115,7 +115,7 @@ export const getSubsidiesForState = async (
         ],
       },
     ],
-    "Gujarat": [
+    Gujarat: [
       {
         id: "g1",
         name: "Solar Rooftop Subsidy Scheme",
@@ -159,7 +159,7 @@ export const getSubsidiesForState = async (
         ],
       },
     ],
-    "Maharashtra": [
+    Maharashtra: [
       {
         id: "m1",
         name: "Pradhan Mantri Kisan Urja Suraksha Evam Utthaan Mahabhiyan",
@@ -170,11 +170,7 @@ export const getSubsidiesForState = async (
         maxSubsidyAmount: 500000,
         officialLink: "https://pmkusum.mnre.gov.in",
         contactEmail: "pmkusum@maharashtra.gov.in",
-        documents: [
-          "Aadhaar",
-          "Land certificate",
-          "Encumbrance certificate",
-        ],
+        documents: ["Aadhaar", "Land certificate", "Encumbrance certificate"],
         applicationProcess: [
           "Online registration",
           "Technical scrutiny",
@@ -201,11 +197,12 @@ export const getSubsidiesForState = async (
         ],
       },
     ],
-    "Karnataka": [
+    Karnataka: [
       {
         id: "k1",
         name: "Karnataka Solar Policy 2014-2024",
-        description: "Accelerated depreciation and tax benefits for solar installations",
+        description:
+          "Accelerated depreciation and tax benefits for solar installations",
         applicableFor: ["solar"],
         eligibleStates: ["Karnataka"],
         subsidyPercentage: 0,
@@ -234,11 +231,7 @@ export const getSubsidiesForState = async (
         maxSubsidyAmount: 100000,
         officialLink: "https://groundwater.karnataka.gov.in",
         contactEmail: "rtrwh@karnataka.gov.in",
-        documents: [
-          "Patta extract",
-          "Sketch plan",
-          "Cost estimate",
-        ],
+        documents: ["Patta extract", "Sketch plan", "Cost estimate"],
         applicationProcess: [
           "District office application",
           "Technical review",
@@ -251,18 +244,15 @@ export const getSubsidiesForState = async (
       {
         id: "tn1",
         name: "Gross National Happiness (GNH) Solar Programme",
-        description: "Subsidized solar installations for households in Tamil Nadu",
+        description:
+          "Subsidized solar installations for households in Tamil Nadu",
         applicableFor: ["solar"],
         eligibleStates: ["Tamil Nadu"],
         subsidyPercentage: 50,
         maxSubsidyAmount: 400000,
         officialLink: "https://tangedco.gov.in",
         contactEmail: "solar@tangedco.gov.in",
-        documents: [
-          "Consumer ID",
-          "Electricity bill",
-          "Identity proof",
-        ],
+        documents: ["Consumer ID", "Electricity bill", "Identity proof"],
         applicationProcess: [
           "TANGEDCO portal registration",
           "Installer selection",
@@ -338,7 +328,9 @@ export const getSubsidiesForState = async (
   // Filter by assessment type if specified
   let filtered = subsidies;
   if (assessmentType && assessmentType !== "both") {
-    filtered = subsidies.filter((s) => s.applicableFor.includes(assessmentType));
+    filtered = subsidies.filter((s) =>
+      s.applicableFor.includes(assessmentType),
+    );
   }
 
   // Calculate total potential subsidy

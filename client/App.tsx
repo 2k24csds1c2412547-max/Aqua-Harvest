@@ -42,12 +42,30 @@ const App = () => (
           {/* Main Routes with Layout */}
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
-            <Route path="/dashboard" element={<ProtectedRoute element={<Dashboard />} />} />
-            <Route path="/assessment" element={<ProtectedRoute element={<Assessment />} />} />
-            <Route path="/solar-assessment" element={<ProtectedRoute element={<SolarAssessment />} />} />
-            <Route path="/subsidies" element={<ProtectedRoute element={<Subsidies />} />} />
-            <Route path="/service-providers" element={<ProtectedRoute element={<ServiceProviders />} />} />
-            <Route path="/notifications" element={<ProtectedRoute element={<ServiceNotifications />} />} />
+            <Route
+              path="/dashboard"
+              element={<ProtectedRoute element={<Dashboard />} />}
+            />
+            <Route
+              path="/assessment"
+              element={<ProtectedRoute element={<Assessment />} />}
+            />
+            <Route
+              path="/solar-assessment"
+              element={<ProtectedRoute element={<SolarAssessment />} />}
+            />
+            <Route
+              path="/subsidies"
+              element={<ProtectedRoute element={<Subsidies />} />}
+            />
+            <Route
+              path="/service-providers"
+              element={<ProtectedRoute element={<ServiceProviders />} />}
+            />
+            <Route
+              path="/notifications"
+              element={<ProtectedRoute element={<ServiceNotifications />} />}
+            />
             <Route path="/resources" element={<Resources />} />
             <Route path="/about" element={<About />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

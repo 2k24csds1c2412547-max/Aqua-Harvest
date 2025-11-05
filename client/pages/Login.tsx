@@ -41,7 +41,9 @@ export default function Login() {
         <div className="text-center mb-8">
           <Link to="/" className="inline-block mb-6">
             <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center neon-glow-cyan mx-auto">
-              <span className="text-2xl font-bold text-white font-heading">AQ</span>
+              <span className="text-2xl font-bold text-white font-heading">
+                AQ
+              </span>
             </div>
           </Link>
           <h1 className="text-4xl font-bold text-white mb-2 font-heading">
@@ -68,7 +70,10 @@ export default function Login() {
             <form onSubmit={handleLogin} className="space-y-6">
               {/* Email Field */}
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-white flex items-center space-x-2">
+                <Label
+                  htmlFor="email"
+                  className="text-white flex items-center space-x-2"
+                >
                   <Mail className="w-4 h-4 text-cyan-400" />
                   <span>Email Address</span>
                 </Label>
@@ -88,7 +93,10 @@ export default function Login() {
 
               {/* Password Field */}
               <div className="space-y-2">
-                <Label htmlFor="password" className="text-white flex items-center space-x-2">
+                <Label
+                  htmlFor="password"
+                  className="text-white flex items-center space-x-2"
+                >
                   <Lock className="w-4 h-4 text-cyan-400" />
                   <span>Password</span>
                 </Label>
@@ -168,7 +176,10 @@ export default function Login() {
         <div className="mt-8 text-center text-slate-400 text-sm">
           <p>
             Need help?{" "}
-            <a href="mailto:support@aquaharvest.com" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+            <a
+              href="mailto:support@aquaharvest.com"
+              className="text-cyan-400 hover:text-cyan-300 transition-colors"
+            >
               Contact support
             </a>
           </p>

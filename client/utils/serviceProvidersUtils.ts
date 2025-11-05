@@ -51,11 +51,7 @@ export const getServiceProvidersForLocation = async (
       website: "www.solartechsolutions.com",
       rating: 4.8,
       reviewCount: 147,
-      certifications: [
-        "MNRE Certified",
-        "BIS Certified",
-        "ISO 9001:2015",
-      ],
+      certifications: ["MNRE Certified", "BIS Certified", "ISO 9001:2015"],
       yearsOfExperience: 8,
       serviceArea: ["Karnataka", "Telangana", "Tamil Nadu"],
       languages: ["English", "Kannada", "Hindi"],
@@ -236,7 +232,8 @@ export const getServiceProvidersForLocation = async (
         {
           author: "Arjun S.",
           rating: 5,
-          comment: "Smart monitoring system is very helpful. Great integration!",
+          comment:
+            "Smart monitoring system is very helpful. Great integration!",
           date: "2024-01-21",
         },
       ],
@@ -246,8 +243,8 @@ export const getServiceProvidersForLocation = async (
   // Filter by service type if specified
   let filtered = providers;
   if (serviceType && serviceType !== "both") {
-    filtered = filtered.filter((p) =>
-      p.type === "both" || p.type === serviceType
+    filtered = filtered.filter(
+      (p) => p.type === "both" || p.type === serviceType,
     );
   }
 
@@ -282,11 +279,10 @@ export const getProviderStats = (providers: ServiceProvider[]) => {
           10,
       ) / 10,
     totalReviews: providers.reduce((sum, p) => sum + p.reviewCount, 0),
-    avgExperience:
-      Math.round(
-        providers.reduce((sum, p) => sum + p.yearsOfExperience, 0) /
-          providers.length,
-      ),
+    avgExperience: Math.round(
+      providers.reduce((sum, p) => sum + p.yearsOfExperience, 0) /
+        providers.length,
+    ),
     totalProjects: providers.reduce((sum, p) => sum + p.previousProjects, 0),
   };
 };

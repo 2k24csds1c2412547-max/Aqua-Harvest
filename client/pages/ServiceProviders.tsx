@@ -37,7 +37,8 @@ export default function ServiceProviders() {
   const [selectedCategory, setSelectedCategory] = useState<
     "installer" | "consultant" | "maintenance" | "all"
   >("all");
-  const [selectedProvider, setSelectedProvider] = useState<ServiceProvider | null>(null);
+  const [selectedProvider, setSelectedProvider] =
+    useState<ServiceProvider | null>(null);
   const user = getCurrentUser();
 
   useEffect(() => {
@@ -59,7 +60,9 @@ export default function ServiceProviders() {
         setProviders(data);
       } catch (err) {
         setError(
-          err instanceof Error ? err.message : "Failed to load service providers",
+          err instanceof Error
+            ? err.message
+            : "Failed to load service providers",
         );
       } finally {
         setIsLoading(false);
@@ -160,7 +163,9 @@ export default function ServiceProviders() {
                 {"icon" in option && option.icon && (
                   <>
                     {option.value === "solar" && <Zap className="w-4 h-4" />}
-                    {option.value === "rtrwh" && <Droplets className="w-4 h-4" />}
+                    {option.value === "rtrwh" && (
+                      <Droplets className="w-4 h-4" />
+                    )}
                   </>
                 )}
                 <span>{option.label}</span>
@@ -182,9 +187,7 @@ export default function ServiceProviders() {
             ].map((option) => (
               <button
                 key={option.value}
-                onClick={() =>
-                  setSelectedCategory(option.value as any)
-                }
+                onClick={() => setSelectedCategory(option.value as any)}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2 ${
                   selectedCategory === option.value
                     ? "bg-purple-600 text-white"
@@ -212,7 +215,9 @@ export default function ServiceProviders() {
           </Card>
           <Card>
             <CardContent className="pt-6 text-center">
-              <div className={`text-2xl font-bold ${getRatingColor(stats.avgRating)}`}>
+              <div
+                className={`text-2xl font-bold ${getRatingColor(stats.avgRating)}`}
+              >
                 {stats.avgRating}
               </div>
               <div className="text-sm text-gray-600">Avg. Rating</div>
@@ -270,7 +275,9 @@ export default function ServiceProviders() {
                     <CardTitle className="text-lg">{provider.name}</CardTitle>
                     <div className="flex items-center space-x-2 mt-2">
                       <div className="flex items-center space-x-1">
-                        <Star className={`w-5 h-5 ${getRatingColor(provider.rating)}`} />
+                        <Star
+                          className={`w-5 h-5 ${getRatingColor(provider.rating)}`}
+                        />
                         <span className="font-semibold text-gray-900">
                           {provider.rating}
                         </span>
@@ -308,10 +315,10 @@ export default function ServiceProviders() {
                 <div className="flex items-start space-x-2">
                   <MapPin className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
                   <div className="text-sm">
-                    <p className="font-medium text-gray-900">{provider.address}</p>
-                    <p className="text-gray-600">
-                      {provider.distance} km away
+                    <p className="font-medium text-gray-900">
+                      {provider.address}
                     </p>
+                    <p className="text-gray-600">{provider.distance} km away</p>
                   </div>
                 </div>
 

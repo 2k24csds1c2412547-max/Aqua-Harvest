@@ -42,7 +42,18 @@ import {
   type RoofGeometryData,
   type SolarAssessmentResults,
 } from "@/utils/solarUtils";
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, Legend, BarChart, Bar } from "recharts";
+import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+  Legend,
+  BarChart,
+  Bar,
+} from "recharts";
 
 interface SolarFormData {
   name: string;
@@ -79,7 +90,8 @@ export default function SolarAssessment() {
   const [locationError, setLocationError] = useState<string | null>(null);
   const [roofError, setRoofError] = useState<string | null>(null);
   const [isCheckingRoof, setIsCheckingRoof] = useState(false);
-  const [roofGeometryData, setRoofGeometryData] = useState<RoofGeometryData | null>(null);
+  const [roofGeometryData, setRoofGeometryData] =
+    useState<RoofGeometryData | null>(null);
 
   const totalSteps = 4;
   const progress = (currentStep / totalSteps) * 100;
@@ -263,8 +275,9 @@ export default function SolarAssessment() {
           Solar Panel Installation Assessment
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Discover your solar potential with our advanced roof analysis and energy generation
-          calculations powered by satellite imagery and location-based metrics.
+          Discover your solar potential with our advanced roof analysis and
+          energy generation calculations powered by satellite imagery and
+          location-based metrics.
         </p>
       </div>
 
@@ -350,7 +363,8 @@ export default function SolarAssessment() {
               )}
 
               <p className="text-xs text-blue-600 mt-2">
-                Accurate location helps us analyze solar irradiance and state-specific incentives
+                Accurate location helps us analyze solar irradiance and
+                state-specific incentives
               </p>
             </div>
 
@@ -398,14 +412,20 @@ export default function SolarAssessment() {
             </div>
 
             <div className="bg-green-50 p-4 rounded-lg">
-              <h4 className="font-medium text-green-800 mb-2">Solar Potential Indicators</h4>
+              <h4 className="font-medium text-green-800 mb-2">
+                Solar Potential Indicators
+              </h4>
               {formData.state && (
                 <div className="text-sm text-green-700 space-y-1">
                   <p>
                     ✓ {formData.state} has{" "}
-                    {["Rajasthan", "Gujarat", "Maharashtra"].includes(formData.state)
+                    {["Rajasthan", "Gujarat", "Maharashtra"].includes(
+                      formData.state,
+                    )
                       ? "excellent"
-                      : ["Karnataka", "Telangana", "Tamil Nadu"].includes(formData.state)
+                      : ["Karnataka", "Telangana", "Tamil Nadu"].includes(
+                            formData.state,
+                          )
                         ? "very good"
                         : "good"}{" "}
                     solar potential
@@ -501,9 +521,13 @@ export default function SolarAssessment() {
                     </div>
                   </div>
                   <div className="text-xs text-purple-600">
-                    ✓ Best orientation: {roofGeometryData.bestOrientation} facing
+                    ✓ Best orientation: {roofGeometryData.bestOrientation}{" "}
+                    facing
                   </div>
-                  <Badge variant="secondary" className="bg-purple-100 text-purple-700">
+                  <Badge
+                    variant="secondary"
+                    className="bg-purple-100 text-purple-700"
+                  >
                     Confidence: {Math.round(roofGeometryData.confidence * 100)}%
                   </Badge>
                 </div>
@@ -517,7 +541,8 @@ export default function SolarAssessment() {
               )}
 
               <p className="text-xs text-purple-600 mt-2">
-                Uses satellite imagery and advanced algorithms to estimate roof area, shadows, and obstacles
+                Uses satellite imagery and advanced algorithms to estimate roof
+                area, shadows, and obstacles
               </p>
             </div>
 
@@ -585,7 +610,8 @@ export default function SolarAssessment() {
                 </SelectContent>
               </Select>
               <p className="text-xs text-gray-500">
-                Trees, nearby buildings, chimneys, or water tanks that might cast shadows
+                Trees, nearby buildings, chimneys, or water tanks that might
+                cast shadows
               </p>
             </div>
 
@@ -623,7 +649,8 @@ export default function SolarAssessment() {
             <div className="bg-blue-50 p-4 rounded-lg">
               <p className="text-sm text-blue-800">
                 <AlertCircle className="w-4 h-4 inline mr-2" />
-                These preferences help us customize recommendations for your needs. Leave blank to use defaults.
+                These preferences help us customize recommendations for your
+                needs. Leave blank to use defaults.
               </p>
             </div>
 
@@ -647,9 +674,7 @@ export default function SolarAssessment() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="budgetConstraint">
-                  Budget Constraint (₹)
-                </Label>
+                <Label htmlFor="budgetConstraint">Budget Constraint (₹)</Label>
                 <Input
                   id="budgetConstraint"
                   type="number"
@@ -692,15 +717,22 @@ export default function SolarAssessment() {
             </div>
 
             <div className="bg-green-50 p-4 rounded-lg">
-              <h4 className="font-medium text-green-800 mb-2">Government Incentives</h4>
+              <h4 className="font-medium text-green-800 mb-2">
+                Government Incentives
+              </h4>
               <p className="text-sm text-green-700 mb-2">
-                Most Indian states offer subsidies for residential solar installations:
+                Most Indian states offer subsidies for residential solar
+                installations:
               </p>
               <ul className="text-sm text-green-700 space-y-1">
-                <li>• Central PM-KUSUM subsidy: Up to 40% for systems ≤ 10 kWp</li>
+                <li>
+                  • Central PM-KUSUM subsidy: Up to 40% for systems ≤ 10 kWp
+                </li>
                 <li>• State-specific incentives vary (MNRE database)</li>
                 <li>• Net metering benefits for surplus energy generation</li>
-                <li>• Accelerated depreciation benefits for commercial systems</li>
+                <li>
+                  • Accelerated depreciation benefits for commercial systems
+                </li>
               </ul>
             </div>
 
@@ -807,7 +839,9 @@ export default function SolarAssessment() {
                   <div className="text-2xl font-bold text-gray-900">
                     ₹{results.assessment.costPerWatt}
                   </div>
-                  <div className="text-xs text-gray-500 mt-1">Industry standard</div>
+                  <div className="text-xs text-gray-500 mt-1">
+                    Industry standard
+                  </div>
                 </div>
 
                 <div className="p-4 bg-gray-50 rounded-lg">
@@ -825,7 +859,9 @@ export default function SolarAssessment() {
                   <div className="text-2xl font-bold text-gray-900">
                     {results.assessment.dailyGeneration} kWh
                   </div>
-                  <div className="text-xs text-gray-500 mt-1">Average per day</div>
+                  <div className="text-xs text-gray-500 mt-1">
+                    Average per day
+                  </div>
                 </div>
 
                 <div className="p-4 bg-gray-50 rounded-lg">
@@ -843,7 +879,9 @@ export default function SolarAssessment() {
                   <div className="text-2xl font-bold text-gray-900">
                     ₹{results.assessment.estimatedCost.toLocaleString()}
                   </div>
-                  <div className="text-xs text-gray-500 mt-1">Complete system</div>
+                  <div className="text-xs text-gray-500 mt-1">
+                    Complete system
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -892,7 +930,9 @@ export default function SolarAssessment() {
                     </h4>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Initial Investment:</span>
+                        <span className="text-gray-600">
+                          Initial Investment:
+                        </span>
                         <span className="font-medium">
                           ₹{results.assessment.estimatedCost.toLocaleString()}
                         </span>
@@ -915,7 +955,9 @@ export default function SolarAssessment() {
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Net Gain (30 years):</span>
+                        <span className="text-gray-600">
+                          Net Gain (30 years):
+                        </span>
                         <span className="font-semibold text-green-600">
                           ₹
                           {(
@@ -973,7 +1015,8 @@ export default function SolarAssessment() {
                     Tonnes CO₂ Reduction/Year
                   </div>
                   <div className="text-sm text-gray-600 mt-2">
-                    Equivalent to planting {Math.round(results.assessment.co2Reduction * 16)} trees
+                    Equivalent to planting{" "}
+                    {Math.round(results.assessment.co2Reduction * 16)} trees
                   </div>
                 </div>
 
@@ -1005,13 +1048,18 @@ export default function SolarAssessment() {
                 {getPanelRecommendations(
                   results.assessment.installableCapacity,
                 ).map((rec, idx) => (
-                  <div key={idx} className="p-4 border border-blue-200 rounded-lg">
+                  <div
+                    key={idx}
+                    className="p-4 border border-blue-200 rounded-lg"
+                  >
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <h4 className="font-semibold text-gray-900">
                           {rec.type}
                         </h4>
-                        <p className="text-sm text-gray-600">{rec.description}</p>
+                        <p className="text-sm text-gray-600">
+                          {rec.description}
+                        </p>
                       </div>
                     </div>
                     <ul className="text-sm text-gray-700 space-y-1 ml-4">
@@ -1067,7 +1115,10 @@ export default function SolarAssessment() {
                   </h4>
                   {results.assessment.subsidyEligibility && (
                     <div className="bg-green-50 p-3 rounded mb-3">
-                      <Badge variant="secondary" className="bg-green-100 text-green-700 mb-2">
+                      <Badge
+                        variant="secondary"
+                        className="bg-green-100 text-green-700 mb-2"
+                      >
                         Eligible for Central Subsidies
                       </Badge>
                       <p className="text-sm text-gray-700 space-y-1">
@@ -1091,14 +1142,10 @@ export default function SolarAssessment() {
             >
               Start New Assessment
             </Button>
-            <Button
-              className="px-8 bg-yellow-600 hover:bg-yellow-700"
-            >
+            <Button className="px-8 bg-yellow-600 hover:bg-yellow-700">
               Download Report
             </Button>
-            <Button
-              className="px-8 bg-green-600 hover:bg-green-700"
-            >
+            <Button className="px-8 bg-green-600 hover:bg-green-700">
               Get Installation Quote
             </Button>
           </div>

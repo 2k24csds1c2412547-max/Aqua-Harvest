@@ -11,7 +11,15 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AlertCircle, User, Mail, Lock, CheckCircle2, Eye, EyeOff } from "lucide-react";
+import {
+  AlertCircle,
+  User,
+  Mail,
+  Lock,
+  CheckCircle2,
+  Eye,
+  EyeOff,
+} from "lucide-react";
 import { signup } from "@/utils/authUtils";
 
 const states = [
@@ -117,7 +125,9 @@ export default function Signup() {
         <div className="text-center mb-8">
           <Link to="/" className="inline-block mb-6">
             <div className="w-16 h-16 bg-gradient-to-br from-lime-400 to-green-500 rounded-2xl flex items-center justify-center neon-glow-lime mx-auto">
-              <span className="text-2xl font-bold text-white font-heading">AQ</span>
+              <span className="text-2xl font-bold text-white font-heading">
+                AQ
+              </span>
             </div>
           </Link>
           <h1 className="text-4xl font-bold text-white mb-2 font-heading">
@@ -144,7 +154,10 @@ export default function Signup() {
             <form onSubmit={handleSignup} className="space-y-5">
               {/* Full Name */}
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-white flex items-center space-x-2">
+                <Label
+                  htmlFor="name"
+                  className="text-white flex items-center space-x-2"
+                >
                   <User className="w-4 h-4 text-lime-400" />
                   <span>Full Name</span>
                 </Label>
@@ -163,7 +176,10 @@ export default function Signup() {
 
               {/* Email */}
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-white flex items-center space-x-2">
+                <Label
+                  htmlFor="email"
+                  className="text-white flex items-center space-x-2"
+                >
                   <Mail className="w-4 h-4 text-lime-400" />
                   <span>Email Address</span>
                 </Label>
@@ -182,7 +198,10 @@ export default function Signup() {
 
               {/* Password */}
               <div className="space-y-2">
-                <Label htmlFor="password" className="text-white flex items-center space-x-2">
+                <Label
+                  htmlFor="password"
+                  className="text-white flex items-center space-x-2"
+                >
                   <Lock className="w-4 h-4 text-lime-400" />
                   <span>Password</span>
                 </Label>
@@ -227,7 +246,10 @@ export default function Signup() {
 
               {/* Confirm Password */}
               <div className="space-y-2">
-                <Label htmlFor="confirmPassword" className="text-white flex items-center space-x-2">
+                <Label
+                  htmlFor="confirmPassword"
+                  className="text-white flex items-center space-x-2"
+                >
                   <CheckCircle2 className="w-4 h-4 text-lime-400" />
                   <span>Confirm Password</span>
                 </Label>
@@ -295,7 +317,10 @@ export default function Signup() {
                   placeholder="e.g., 560001"
                   value={formData.pincode}
                   onChange={(e) =>
-                    setFormData((prev) => ({ ...prev, pincode: e.target.value }))
+                    setFormData((prev) => ({
+                      ...prev,
+                      pincode: e.target.value,
+                    }))
                   }
                   className="bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus:border-lime-400 focus:ring-lime-400"
                 />
@@ -347,11 +372,17 @@ export default function Signup() {
         <div className="mt-8 text-center text-slate-400 text-sm">
           <p className="mb-2">
             By signing up, you agree to our{" "}
-            <a href="#" className="text-lime-400 hover:text-lime-300 transition-colors">
+            <a
+              href="#"
+              className="text-lime-400 hover:text-lime-300 transition-colors"
+            >
               Terms of Service
             </a>{" "}
             and{" "}
-            <a href="#" className="text-lime-400 hover:text-lime-300 transition-colors">
+            <a
+              href="#"
+              className="text-lime-400 hover:text-lime-300 transition-colors"
+            >
               Privacy Policy
             </a>
           </p>

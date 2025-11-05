@@ -100,7 +100,8 @@ export default function ServiceNotifications() {
       installationId: "inst1",
       type: "maintenance",
       title: "Inverter Maintenance Scheduled",
-      description: "Preventive maintenance for your solar inverter to ensure longevity.",
+      description:
+        "Preventive maintenance for your solar inverter to ensure longevity.",
       dueDate: "2024-04-01",
       priority: "low",
       read: true,
@@ -110,16 +111,12 @@ export default function ServiceNotifications() {
 
   const markAsRead = (notificationId: string) => {
     setNotifications((prev) =>
-      prev.map((n) =>
-        n.id === notificationId ? { ...n, read: true } : n
-      )
+      prev.map((n) => (n.id === notificationId ? { ...n, read: true } : n)),
     );
   };
 
   const deleteNotification = (notificationId: string) => {
-    setNotifications((prev) =>
-      prev.filter((n) => n.id !== notificationId)
-    );
+    setNotifications((prev) => prev.filter((n) => n.id !== notificationId));
   };
 
   const unreadCount = notifications.filter((n) => !n.read).length;
@@ -170,7 +167,7 @@ export default function ServiceNotifications() {
     const today = new Date();
     const serviceDate = new Date(dateString);
     const diff = Math.ceil(
-      (serviceDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
+      (serviceDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24),
     );
     return diff;
   };
@@ -208,7 +205,9 @@ export default function ServiceNotifications() {
       {/* Installations Overview */}
       <div className="mb-12">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">Your Installations</h2>
+          <h2 className="text-2xl font-bold text-gray-900">
+            Your Installations
+          </h2>
           <Button className="bg-blue-600 hover:bg-blue-700">
             <Plus className="w-4 h-4 mr-2" />
             Add Installation
@@ -246,7 +245,9 @@ export default function ServiceNotifications() {
                         Installation Date
                       </p>
                       <p className="font-semibold text-gray-900">
-                        {new Date(installation.installationDate).toLocaleDateString()}
+                        {new Date(
+                          installation.installationDate,
+                        ).toLocaleDateString()}
                       </p>
                     </div>
                     <div>
@@ -266,9 +267,13 @@ export default function ServiceNotifications() {
                   </div>
 
                   {/* Service Schedule */}
-                  <div className={`p-4 rounded-lg ${
-                    isOverdue ? "bg-red-50 border border-red-200" : "bg-green-50 border border-green-200"
-                  }`}>
+                  <div
+                    className={`p-4 rounded-lg ${
+                      isOverdue
+                        ? "bg-red-50 border border-red-200"
+                        : "bg-green-50 border border-green-200"
+                    }`}
+                  >
                     <div className="flex items-center space-x-2 mb-2">
                       <Calendar className="w-4 h-4" />
                       <p className="font-semibold text-gray-900">
@@ -276,15 +281,19 @@ export default function ServiceNotifications() {
                       </p>
                     </div>
                     <p className="text-sm text-gray-700 mb-2">
-                      {new Date(installation.nextServiceDate).toLocaleDateString()}
+                      {new Date(
+                        installation.nextServiceDate,
+                      ).toLocaleDateString()}
                     </p>
-                    <p className={`text-sm font-medium ${
-                      isOverdue
-                        ? "text-red-700"
-                        : daysUntil <= 30
-                          ? "text-amber-700"
-                          : "text-green-700"
-                    }`}>
+                    <p
+                      className={`text-sm font-medium ${
+                        isOverdue
+                          ? "text-red-700"
+                          : daysUntil <= 30
+                            ? "text-amber-700"
+                            : "text-green-700"
+                      }`}
+                    >
                       {isOverdue
                         ? `${Math.abs(daysUntil)} days overdue`
                         : `${daysUntil} days remaining`}
@@ -292,7 +301,9 @@ export default function ServiceNotifications() {
                     {installation.lastServiceDate && (
                       <p className="text-xs text-gray-600 mt-2">
                         Last serviced:{" "}
-                        {new Date(installation.lastServiceDate).toLocaleDateString()}
+                        {new Date(
+                          installation.lastServiceDate,
+                        ).toLocaleDateString()}
                       </p>
                     )}
                   </div>
@@ -326,7 +337,7 @@ export default function ServiceNotifications() {
           <div className="space-y-4">
             {notifications.map((notification) => {
               const installation = installations.find(
-                (i) => i.id === notification.installationId
+                (i) => i.id === notification.installationId,
               );
 
               return (
@@ -355,7 +366,9 @@ export default function ServiceNotifications() {
                                 {notification.title}
                               </h3>
                               {!notification.read && (
-                                <Badge className="bg-red-100 text-red-700">New</Badge>
+                                <Badge className="bg-red-100 text-red-700">
+                                  New
+                                </Badge>
                               )}
                             </div>
                             <p className="text-sm text-gray-600">
@@ -372,7 +385,9 @@ export default function ServiceNotifications() {
                             <Calendar className="w-3 h-3" />
                             <span>
                               Due:{" "}
-                              {new Date(notification.dueDate).toLocaleDateString()}
+                              {new Date(
+                                notification.dueDate,
+                              ).toLocaleDateString()}
                             </span>
                           </div>
                           <div>
